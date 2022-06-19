@@ -6,9 +6,11 @@ from PIL import ImageOps
 
 
 @click.command()
+@click.option('--gray', '-g', help="Generate gray image.",
+              is_flag=True)
 @click.argument("FILENAME")
 @click.argument("SIZE", nargs=-1)
-def cli(filename, size):
+def cli(filename, size, gray):
     if not size:
         size = (16, 32, 48, 128)
     else:
@@ -19,7 +21,7 @@ def cli(filename, size):
     for size in size:
         icon = src_image.resize((size, size), Image.LANCZOS)
         icon.save("icon{size}.png".format(size=size))
-        if size == 19:
+        if gray:
             grayscale_icon = ImageOps.grayscale(icon)
             grayscale_icon.save("icon{size}-disable.png".format(size=size))
 

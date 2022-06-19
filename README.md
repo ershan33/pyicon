@@ -26,5 +26,4 @@ $ icon some.jpg 128 48
 ## Reference
 
 1. [click](https://github.com/pallets/click)
-2. [chrome-extension-icon-generator
-](https://github.com/neglect-yp/chrome-extension-icon-generator/blob/master/icon_generator.py)
+2. [chrome-extension-icon-generator](https://github.com/neglect-yp/chrome-extension-icon-generator/blob/master/icon_generator.py)
