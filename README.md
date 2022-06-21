@@ -17,9 +17,13 @@ $ icon --help
 Usage: icon.py [OPTIONS] FILENAME [SIZE]...
 
 Options:
-  --help  Show this message and exit.
+  -g, --gray  Generate gray image.
+  --help      Show this message and exit.
 
 # convert some.jpg to 128x128 and 48x48 icons.
+$ icon some.jpg 128 48
+
+# convert some.jpg to 48x48 icon and a gray for disable status
 $ icon some.jpg 128 48
 ```
 

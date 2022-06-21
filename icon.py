@@ -5,6 +5,19 @@ from PIL import Image
 from PIL import ImageOps
 
 
+def square(image):
+    w, h = image.size
+    if w == h: return image
+    short_edge = min(w, h)
+    if short_edge == w:
+        offset = round((h - w) / 2)
+        crop_box = (0, offset, short_edge, offset+short_edge)
+    else:
+        offset = round((w - h) / 2)
+        crop_box = (offset, 0, offset+short_edge, short_edge)
+    return image.crop(crop_box)
+
+
 @click.command()
 @click.option('--gray', '-g', help="Generate gray image.",
               is_flag=True)
@@ -17,6 +30,7 @@ def cli(filename, size, gray):
         size = [int(x) for x in size]
 
     src_image = Image.open(filename, "r")
+    src_image = square(src_image)
 
     for size in size:
         icon = src_image.resize((size, size), Image.LANCZOS)

@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="pyicon",
-    version="0.2.0",
+    version="0.3.0",
     install_requires=[
         "click",
         "pillow",
