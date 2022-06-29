@@ -18,6 +18,7 @@ Usage: icon.py [OPTIONS] FILENAME [SIZE]...
 
 Options:
   -g, --gray  Generate gray image.
+  -i, --ico   Save as .ico file.
   --help      Show this message and exit.
 
 # convert some.jpg to 128x128 and 48x48 icons.
